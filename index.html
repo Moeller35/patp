@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciamento de Grupos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="jtree/style.min.css" />
+  <link rel="stylesheet" href="lista/bootstrap-duallistbox.css" />
+</head>
+
+<body>
+  <div id="Menu">
+    <div id="jstree_demo_div">
+      <ul>
+        <li data-jstree='{ "opened" : true }'>Desenvolvimento
+          <ul>
+            <li>Programadores</li>
+          </ul>
+        </li>
+        <li>Financeiro
+          <ul>
+            <li>Contadores</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="Grupos">
+    <select id="Grupos" multiple="multiple" size="10" name="duallistbox_demo1[]" title="duallistbox_demo1[]">
+      <option value="option1">Pedro Farias</option>
+      <option value="option2">Juliane Souza</option>
+      <option value="option3" selected="selected">João Silva</option>
+      <option value="option4">Eduardo Machado</option>
+      <option value="option5">Felipe Oliveira</option>
+      <option value="option6" selected="selected">Henrique Bergamin</option>
+      <option value="option7">Luana Paula</option>
+      <option value="option8">Maria Santos</option>
+      <option value="option9">Helena Cavalcante</option>
+      <option value="option0">Marcos Fernandes</option>
+    </select>
+  </div>
+
+  <div id="Botoes">
+    <button type="button" class="btn btn-outline-danger">Cancelar</button>
+    <button type="button" class="btn btn-outline-success" onclick="salvar()">Salvar</button>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="jtree/jstree.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="lista/jquery.bootstrap-duallistbox.js"></script>
+  <script>
+    $(function () {
+      $('#jstree_demo_div').jstree();
+    });
+
+    $("#Grupos").bootstrapDualListbox({
+      selectorMinimalHeight: 450,
+      filterPlaceHolder: 'Pesquisar'
+    });
+
+    function salvar() {
+      alert("Alterações salvas com sucesso.");
+    };
+  </script>
+
+</body>
+
+</html>
