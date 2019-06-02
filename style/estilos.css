@@ -1,4 +1,4 @@
-#Menu{
+.menu{
     float: left;
     width: 17%;
     position: absolute;
@@ -16,7 +16,7 @@
     position: absolute;
 }
 
-#Botoes{
+.botoes{
     position: absolute;
     bottom: 0;
     right: 20px;
